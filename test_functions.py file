@@ -1,0 +1,36 @@
+
+ 
+
+#Note: Pytest was not running in my Project Notebook
+
+
+from my_functions import yes_or_no, freq_of_symptoms, pain_scale 
+
+chat_bot = input("Hello, I am your doctor's virtual assistant! You are here because you have been experiencing some gastrointestinal   concerns. Your doctor will see you shortly, but they would like for you to respond to some questions that I will be taking note of for them! Throughout the entirety of this questionnaire, if your answer is yes, please respond with 'Y' and if your answer is no, please respond with 'N'. Are you ready to begin your questionnaire? ")
+
+chat_bot = int(input("If you have been experiencing loose stools or diarrhea, approximately how many days a week do you experience loose stools or diarrhea? If you do not experience loose stools or diarrhea, please respond with '0'. "))
+
+chat_bot = int(input("If you answered yes to experiencing abdominal pain or cramping, how would you rate your pain on a scale of 1 to 10, with 1 being no pain and 10 being the worst pain. Respond with '1' if you responded no to the previous question. "))
+
+def test_yes_or_no():
+    assert chat_bot == "Y" or chat_bot == "N"
+    assert callable(yes_or_no)
+    assert isinstance(chat_bot , str)
+    
+def test_freq_of_symptoms():
+    assert isinstance(chat_bot , int)
+    assert callable(freq_of_symptoms)
+    assert chat_bot != str 
+
+           
+           
+def test_pain_scale():
+    assert chat_bot != str  
+    assert callable(pain_scale)
+    assert isinstance(chat_bot , int)
+    
+
+
+
+                 
+    
