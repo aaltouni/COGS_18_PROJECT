@@ -1,0 +1,32 @@
+
+import random
+
+chat_bot = int(input("If you answered yes to experiencing abdominal pain or cramping, how would you rate your pain on a scale of 1 to 10, with 1 being no pain and 10 being the worst pain. Respond with '1' if you responded no to the previous question. "))
+
+high_pain_responses = ["That sounds painful, I'm sorry to hear that.", "I will let the doctor know you're in pain.", "The doctor will figure out how to manage your pain soon."]
+low_pain_responses = ["Although you may be experiencing some pain, I am glad it is not excruciating.", "You're one of the lucky ones!", "I'll make note of this for the doctor."]
+
+
+def pain_scale(num):
+    """Generates a random response based on the user's pain level using a pain scale.
+     
+     Parameters
+     ----------
+     num : int
+         User's pain level 
+        
+     Returns
+     -------
+      random.choice of a pain response : string
+         String containing a random response based on the user's pain level, unless the user responds with a number that exceeds
+         the pain scale, then the function returns a different response.
+         """
+        
+    if chat_bot >= 6 and chat_bot <= 10:
+        return(random.choice(high_pain_responses))
+    elif chat_bot > 10:
+        print("Wow, that sounds painful, but please rate your pain using a scale from 1 to 10. ")
+    else:
+        return(random.choice(low_pain_responses))
+
+pain_scale(chat_bot)
