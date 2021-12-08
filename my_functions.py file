@@ -1,0 +1,76 @@
+
+def yes_or_no(answ): 
+    """Generates a random response based on the user's response to a yes or no question.
+     
+    Parameters
+    ----------
+    answ : string
+        User's answer 
+        
+    Returns
+    -------
+     random.choice of a yes or no response : string
+        String containing a random response based on the user's response.
+    """ 
+    
+    if chat_bot == "Y":
+        return(random.choice(yes_responses))
+    else:
+        return(random.choice(no_responses))
+        
+yes_or_no(chat_bot)
+
+
+
+
+
+def freq_of_symptoms(num_a_week):
+    """Generates a random response based on the number of days the user experiences symptoms in a given week.
+    
+    Parameters
+    ----------
+    num_a_week : int
+        User's answer 
+        
+    Returns
+    -------
+     random.choice of a yes or no response : string
+         String containg a random response, unless the user responds with amount of days that exceed the number of
+         days in a week, then the function will return a different message.
+    """ 
+
+    if chat_bot > 3 and chat_bot <= 7:
+        print(random.choice(yes_responses))
+    elif chat_bot > 7:
+        print("This is not a valid answer, please try again. ")
+    else:
+        print(random.choice(no_responses))
+freq_of_symptoms(chat_bot)
+
+
+
+
+
+def pain_scale(num):
+    """Generates a random response based on the user's pain level using a pain scale.
+     
+     Parameters
+     ----------
+     num : int
+         User's pain level 
+        
+     Returns
+     -------
+      random.choice of a pain response : string
+         String containing a random response based on the user's pain level, unless the user responds with a number that exceeds
+         the pain scale, then the function returns a different response.
+         """
+        
+    if chat_bot >= 6 and chat_bot <= 10:
+        return(random.choice(high_pain_responses))
+    elif chat_bot > 10:
+        print("Wow, that sounds painful, but please rate your pain using a scale from 1 to 10. ")
+    else:
+        return(random.choice(low_pain_responses))
+
+pain_scale(chat_bot)
